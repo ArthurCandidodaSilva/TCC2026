@@ -47,6 +47,10 @@ if (!$pedido) {
     header('Location: index.php');
     exit;
 }
+if ($pedido['status_pedido'] !== 'pago') {
+    header('Location: pagamento.php?id=' . (int) $pedido_id);
+    exit;
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -173,7 +177,7 @@ $status = htmlspecialchars(
                 Guarde o número do pedido para consultar sua compra
                 quando precisar.
             </p>
-qualquer coisa
+
         </section>
 
     </main>
