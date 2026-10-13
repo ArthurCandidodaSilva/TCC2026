@@ -173,7 +173,7 @@ $status = htmlspecialchars(
                 Guarde o número do pedido para consultar sua compra
                 quando precisar.
             </p>
-
+qualquer coisa
         </section>
 
     </main>
