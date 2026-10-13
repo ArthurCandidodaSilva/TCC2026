@@ -1,0 +1,876 @@
+/* =========================================================
+   NATÁLIA MILANESE JOIAS
+   PAINEL ADMINISTRATIVO
+   ========================================================= */
+
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3ef;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TOPO
+   ========================================================= */
+
+.topo {
+    min-height: 82px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd8d0;
+
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.topo h1 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+.topo p {
+    margin: 5px 0 0;
+
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* =========================================================
+   LAYOUT PRINCIPAL
+   ========================================================= */
+
+.layout {
+    display: flex;
+
+    min-height: calc(100vh - 82px);
+}
+
+
+/* =========================================================
+   MENU LATERAL
+   ========================================================= */
+
+.menu {
+    width: 240px;
+    flex-shrink: 0;
+
+    background: #222;
+
+    padding: 28px 15px;
+}
+
+.menu h2 {
+    margin: 0 10px 25px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.menu a {
+    display: block;
+
+    padding: 12px 14px;
+    margin-bottom: 5px;
+
+    border-radius: 5px;
+
+    color: #d8d8d8;
+
+    font-size: 14px;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover {
+    background: #333;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.conteudo {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 32px;
+}
+
+.conteudo h1,
+.conteudo h2,
+.conteudo h3 {
+    color: #222;
+}
+
+.conteudo h2 {
+    margin: 0;
+
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.conteudo h3 {
+    margin: 0 0 6px;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.conteudo p {
+    color: #666;
+}
+
+
+/* =========================================================
+   ÁREA DE AÇÕES / TÍTULO
+   ========================================================= */
+
+.acoes-container {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.acoes-container p {
+    margin: 6px 0 0;
+
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+.card {
+    background: #ffffff;
+
+    border: 1px solid #ddd8d0;
+
+    border-radius: 8px;
+
+    padding: 22px;
+
+    margin-bottom: 22px;
+}
+
+.cards .card {
+    margin-bottom: 0;
+}
+
+.card .titulo {
+    margin-bottom: 10px;
+
+    color: #777;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.card .numero {
+    color: #222;
+
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABELAS
+   ========================================================= */
+
+.tabela-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd8d0;
+
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eee;
+
+    font-size: 14px;
+}
+
+th {
+    background: #faf9f7;
+
+    color: #555;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+td {
+    color: #333;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #faf9f7;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    border: 1px solid #222;
+    border-radius: 5px;
+
+    background: #222;
+    color: #ffffff;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+    background: #444;
+    border-color: #444;
+}
+
+.btn-secundario {
+    background: #ffffff;
+    color: #222;
+
+    border: 1px solid #ccc;
+}
+
+.btn-secundario:hover {
+    background: #f5f3ef;
+    border-color: #aaa;
+}
+
+/* =========================================================
+   BOTÕES DE AÇÃO DOS PRODUTOS
+   ========================================================= */
+
+.btn-editar {
+    background: #ffffff;
+    color: #222;
+
+    border: 1px solid #bbb;
+}
+
+.btn-editar:hover {
+    background: #f5f3ef;
+    border-color: #999;
+}
+
+.btn-excluir {
+    background: #ffffff;
+    color: #8a2d2d;
+
+    border: 1px solid #d8b0b0;
+}
+
+.btn-excluir:hover {
+    background: #fff4f4;
+    border-color: #c88f8f;
+}
+
+
+/* =========================================================
+   AÇÕES EM TABELAS
+   ========================================================= */
+
+.acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background: #eee;
+
+    color: #444;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+
+form {
+    width: 100%;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #222;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #888;
+}
+
+textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+button {
+    border: none;
+}
+
+
+/* =========================================================
+   GRUPOS DE FORMULÁRIO
+   ========================================================= */
+
+.form-grupo {
+    margin-bottom: 18px;
+}
+
+.form-acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   MENSAGENS
+   ========================================================= */
+
+.erro {
+    padding: 14px 16px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #e0b8b8;
+    border-radius: 6px;
+
+    background: #fff4f4;
+
+    color: #8a2d2d;
+}
+
+.erro p {
+    margin: 6px 0 0;
+
+    color: #8a2d2d;
+}
+
+.sucesso {
+    padding: 14px 16px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #b8d8c0;
+    border-radius: 6px;
+
+    background: #f2faf4;
+
+    color: #28633a;
+}
+
+.sucesso p {
+    margin: 6px 0 0;
+
+    color: #28633a;
+}
+
+
+/* =========================================================
+   IMAGENS DE PRODUTOS
+   ========================================================= */
+
+.produto-imagem {
+    width: 70px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    border: 1px solid #ddd;
+}
+
+.produto-imagem-grande {
+    max-width: 300px;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.vazio {
+    padding: 20px 0;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.secao {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   DADOS DA CONTA
+   ========================================================= */
+
+.dados-conta {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0;
+
+    margin-top: 20px;
+
+    border-top: 1px solid #eee;
+}
+
+.dado {
+    padding: 18px 15px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.dado:nth-child(odd) {
+    border-right: 1px solid #eee;
+}
+
+.dado span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.dado strong {
+    display: block;
+
+    color: #222;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .layout {
+        display: block;
+    }
+
+    .menu {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .menu h2 {
+        margin-bottom: 12px;
+    }
+
+    .menu a {
+        display: inline-block;
+
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .conteudo {
+        padding: 22px;
+    }
+
+    .acoes-container {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .topo {
+        padding: 18px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .topo h1 {
+        font-size: 19px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .conteudo {
+        padding: 18px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .menu a {
+        display: block;
+
+        margin-right: 0;
+    }
+
+    .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .form-acoes {
+        flex-direction: column;
+    }
+
+    .form-acoes .btn {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       DADOS DA CONTA - MOBILE
+       ===================================================== */
+
+    .dados-conta {
+        grid-template-columns: 1fr;
+    }
+
+    .dado:nth-child(odd) {
+        border-right: none;
+    }
+
+}
+
+/* =========================================================
+   EDIÇÃO DE PRODUTO - IMAGENS
+   ========================================================= */
+
+.campo-imagens {
+    margin-top: 22px;
+    padding: 20px;
+    background: #f8f7f4;
+    border: 1px solid #e8e3dc;
+    border-radius: 12px;
+}
+
+.campo-imagens > label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.produto-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 120px;
+    margin-bottom: 22px;
+}
+
+.produto-imagem img {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #e8e3dc;
+    border-radius: 10px;
+}
+
+.campo-nova-imagem {
+    padding-top: 18px;
+    border-top: 1px solid #e8e3dc;
+}
+
+.campo-nova-imagem label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.campo-nova-imagem input[type="file"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #d8d2c9;
+    border-radius: 8px;
+}
+
+.campo-nova-imagem small {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.acoes-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+    .campo-imagens {
+        padding: 14px;
+    }
+
+    .produto-imagem img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .acoes-container {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .acoes-container button,
+    .acoes-container a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+/* Atualização de status do pedido */
+
+.status-pedido-card {
+    margin-top: 24px;
+}
+
+.form-status {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.campo-status {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 220px;
+}
+
+.campo-status label {
+    font-weight: 600;
+}
+
+.campo-status select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #d8d2c9;
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.btn-salvar-status {
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1px solid #222;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.btn-salvar-status:hover {
+    background: #fff;
+    color: #222;
+}
+
+@media (max-width: 600px) {
+    .form-status {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .btn-salvar-status {
+        width: 100%;
+    }
+}
