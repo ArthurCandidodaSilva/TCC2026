@@ -176,6 +176,9 @@ function nomeMetodoPagamento(?string $metodo): string
     }
 }
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 ?>
 
 <!DOCTYPE html>
@@ -768,7 +771,15 @@ function nomeMetodoPagamento(?string $metodo): string
         <button type="submit" class="btn-salvar-status">
             Salvar novo status
         </button>
-
+<input
+    type="hidden"
+    name="csrf_token"
+    value="<?= htmlspecialchars(
+        $_SESSION['csrf_token'],
+        ENT_QUOTES,
+        'UTF-8'
+    ) ?>"
+>
     </form>
 
  </div>
